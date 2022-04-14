@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "B7F3ATHVmrAHqW15XG7STqTDjkTbd03istXac8pBCS85ERwQKTGGr13j3FLxYDeu5NUqqctT5Dg5xJkUqCB1jw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nathi\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nathi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.20\\microsoft.netcore.app.host.win-x64.3.1.20.nupkg.sha512",
+    "C:\\Users\\nathi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\nathi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\nathi\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
