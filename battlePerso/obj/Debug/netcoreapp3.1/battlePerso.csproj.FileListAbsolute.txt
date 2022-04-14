@@ -62,3 +62,17 @@ F:\BattleRoyal\battlePerso\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.Assem
 F:\BattleRoyal\battlePerso\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.csproj.CoreCompileInputs.cache
 F:\BattleRoyal\battlePerso\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.dll
 F:\BattleRoyal\battlePerso\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.pdb
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\bin\Debug\netcoreapp3.1\battlePerso.exe
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\bin\Debug\netcoreapp3.1\battlePerso.deps.json
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\bin\Debug\netcoreapp3.1\battlePerso.runtimeconfig.json
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\bin\Debug\netcoreapp3.1\battlePerso.runtimeconfig.dev.json
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\bin\Debug\netcoreapp3.1\battlePerso.dll
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\bin\Debug\netcoreapp3.1\battlePerso.pdb
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.csproj.AssemblyReference.cache
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.AssemblyInfoInputs.cache
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.AssemblyInfo.cs
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.csproj.CoreCompileInputs.cache
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.dll
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.pdb
+C:\Users\nathi\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.genruntimeconfig.cache

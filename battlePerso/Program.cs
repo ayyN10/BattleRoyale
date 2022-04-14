@@ -26,6 +26,7 @@ namespace battlePerso
             Dieux Odin = new Dieux(100, 50, "Odin", "Lance de vériter", 1);
             Tueur_Dieux Zeus = new Tueur_Dieux(200, 52, "Zeus", "Lance de vériter", 3);
             Demon Hades = new Demon(100, 10, "Hades", "Flamme de l'enfer", 1); 
+            
 
             lesPersonnages.Add(Odin);
             lesPersonnages.Add(Zeus);
@@ -57,6 +58,7 @@ namespace battlePerso
 
             }
             Console.WriteLine("le vainqueur est "+ lesPersonnages[0].Nom);
+            Console.ReadLine();
                 
 
         }
@@ -75,7 +77,7 @@ namespace battlePerso
         {
             foreach (Personnage unPerso in lesPersonnages.ToList())
             {
-                if (unPerso.Mort == true)
+                if (unPerso.EstMort == true)
                 {
                     lesPersonnages.Remove(unPerso);
                     lesPersonnagesMorts.Add(unPerso);

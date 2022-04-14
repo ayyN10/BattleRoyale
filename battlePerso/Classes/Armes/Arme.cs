@@ -6,16 +6,16 @@ namespace battlePerso
 {
     class Arme
     {
-        private int degat;
-        private string name;
+        private int degats;
+        private string nom;
 
-        public Arme(int Degat, string Nom)
+        public Arme(int Dégats, string Nom)
         {
-            this.Degat = Degat;
-            this.name = Nom;
+            this.degats = Dégats;
+            this.nom = Nom;
         }
 
-        public int Degat { get => degat; set => degat = value; }
-        public string Name { get => name; set => name = value; }
+        public int Degat { get => degats; set => degats = value; }
+        public string Name { get => nom; set => nom = value; }
     }
 }

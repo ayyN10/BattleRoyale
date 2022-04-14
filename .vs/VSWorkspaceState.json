@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\battlePerso",
-    "\\battlePerso\\Classes",
-    "\\battlePerso\\Classes\\Personnages",
-    "\\battlePerso\\obj"
+    "\\battlePerso"
   ],
-  "SelectedNode": "\\battlePerso\\Classes\\Personnages\\Demon.cs",
+  "SelectedNode": "\\battlePerso.sln",
   "PreviewInSolutionExplorer": false
 }
