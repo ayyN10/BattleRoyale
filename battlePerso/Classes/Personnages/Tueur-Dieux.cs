@@ -6,11 +6,13 @@ namespace battlePerso
 {
     class Tueur_Dieux : Personnage
     {
-        private int avantage = 50;
+        private int avantage;
+        private int désavantage;
 
-        public Tueur_Dieux(int PointsDeVie, int Force, string Nom, string Arme, int Dégats) : base(PointsDeVie, Force, Nom, Arme, Dégats)
+        public Tueur_Dieux(int PointsDeVie, int Force, string Nom, string Arme, int Dégats, int Avantage, int Désavantage) : base(PointsDeVie, Force, Nom, Arme, Dégats)
         {
-
+            this.avantage = Avantage;
+            this.désavantage = Désavantage;
         }
 
         public override void Coup(Personnage ennemi)

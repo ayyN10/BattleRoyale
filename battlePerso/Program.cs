@@ -25,7 +25,9 @@ namespace battlePerso
 
             Dieux Odin = new Dieux(100, 50, "Odin", "Lance de vériter", 1);
             Tueur_Dieux Zeus = new Tueur_Dieux(200, 52, "Zeus", "Lance de vériter", 3);
-            Demon Hades = new Demon(100, 10, "Hades", "Flamme de l'enfer", 1); 
+            Demon Hades = new Demon(100, 10, "Hades", "Flamme de l'enfer", 1);
+
+            Personnage personnageCHoisi = null;
             
 
             lesPersonnages.Add(Odin);
@@ -38,15 +40,15 @@ namespace battlePerso
              {
                 case "Odin":
                     Console.WriteLine("Vous avez choisi Odin");
-                    Console.WriteLine();
+                    personnageCHoisi = Odin;
                     break;
                 case "Zeus":
                     Console.WriteLine("Vous avez choisi Zeus");
-                    Console.WriteLine();
+                    personnageCHoisi = Zeus;
                     break;
                 case "Hades":
                     Console.WriteLine("Vous avez choisi Hades");
-                    Console.WriteLine();
+                    personnageCHoisi = Hades;
                     break;
             }
 
@@ -56,6 +58,14 @@ namespace battlePerso
                 ListerPersonnagesMorts(lesPersonnages, lesPersonnagesMort); //Recompte les personnages morts
                 Console.ReadLine();
 
+            }
+            if(lesPersonnages[0] == personnageCHoisi)
+            {
+                Console.WriteLine("Bravo ! Vous avez gagnez !");
+            }
+            else
+            {
+                Console.WriteLine("Dommage ! Vous avez perdu...");
             }
             Console.WriteLine("le vainqueur est "+ lesPersonnages[0].Nom);
             Console.ReadLine();

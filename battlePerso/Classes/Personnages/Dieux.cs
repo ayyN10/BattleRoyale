@@ -6,11 +6,13 @@ namespace battlePerso
 {
     class Dieux : Personnage
     {
-        private int avantage = 50;
+        private int avantage;
+        private int désavantage;
 
-        public Dieux (int desPointVie, int uneForce, string unNomPerso, string uneArme, int desDegats) : base(desPointVie, uneForce, unNomPerso, uneArme, desDegats)
+        public Dieux (int PointsDeVie, int Force, string Nom, string Arme, int Dégats, int Avantage, int Désavantage) : base(PointsDeVie, Force, Nom, Arme, Dégats)
         {
-            //Avantage
+            this.avantage = Avantage;
+            this.désavantage = Désavantage;
         }
 
         public override void Coup(Personnage ennemi)
