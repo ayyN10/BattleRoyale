@@ -18,14 +18,16 @@ namespace battlePerso
         public static void AfficherMenu()
         {
 
-            Console.WriteLine("Choisi un personnage !");
+            Console.WriteLine("Choisissez un personnage !");
 
             List<Personnage> lesPersonnages = new List<Personnage>();
             List<Personnage> lesPersonnagesMort = new List<Personnage>();
 
-            Dieux Odin = new Dieux(100, 50, "Odin", "Lance de vériter", 1);
-            Tueur_Dieux Zeus = new Tueur_Dieux(200, 52, "Zeus", "Lance de vériter", 3);
-            Demon Hades = new Demon(100, 10, "Hades", "Flamme de l'enfer", 1); 
+            Dieux Odin = new Dieux(100, 50, "Odin", "Lance de vériter", 1, 50, 50);
+            Tueur_Dieux Zeus = new Tueur_Dieux(200, 52, "Zeus", "Lance de vériter", 3, 50, 50);
+            Demon Hades = new Demon(100, 10, "Hades", "Flamme de l'enfer", 1, 50, 50);
+
+            Personnage personnageChoisi = null;
             
 
             lesPersonnages.Add(Odin);
@@ -38,24 +40,32 @@ namespace battlePerso
              {
                 case "Odin":
                     Console.WriteLine("Vous avez choisi Odin");
-                    Console.WriteLine();
+                    personnageChoisi = Odin;
                     break;
                 case "Zeus":
                     Console.WriteLine("Vous avez choisi Zeus");
-                    Console.WriteLine();
+                    personnageChoisi = Zeus;
                     break;
                 case "Hades":
                     Console.WriteLine("Vous avez choisi Hades");
-                    Console.WriteLine();
+                    personnageChoisi = Hades;
                     break;
             }
 
             while (lesPersonnages.Count > 1) 
             {
-                LancerBattleRoyal(lesPersonnages);
+                LancerCombatBattleRoyal(lesPersonnages);
                 ListerPersonnagesMorts(lesPersonnages, lesPersonnagesMort); //Recompte les personnages morts
                 Console.ReadLine();
 
+            }
+            if(lesPersonnages[0] == personnageChoisi)
+            {
+                Console.WriteLine("Bravo ! Vous avez gagnez !");
+            }
+            else
+            {
+                Console.WriteLine("Dommage ! Vous avez perdu...");
             }
             Console.WriteLine("le vainqueur est "+ lesPersonnages[0].Nom);
             Console.ReadLine();
@@ -85,7 +95,7 @@ namespace battlePerso
             }
         }
 
-        public static void LancerBattleRoyal(List<Personnage> lesPersonnages)
+        public static void LancerCombatBattleRoyal(List<Personnage> lesPersonnages)
         {
             Random rdn_Personnage = new Random() ; 
             int choixPersonnage = rdn_Personnage.Next(0, lesPersonnages.Count); //Choix d'un personnage
