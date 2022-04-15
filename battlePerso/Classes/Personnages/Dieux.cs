@@ -6,12 +6,17 @@ namespace battlePerso
 {
     class Dieux : Personnage
     {
-        private int avantage = 50;
+        private int avantage;
+        private int désavantage;
 
-        public Dieux (int desPointVie, int uneForce, string unNomPerso, string uneArme, int desDegats) : base(desPointVie, uneForce, unNomPerso, uneArme, desDegats)
+        public Dieux(int PointsDeVie, int Force, string Nom, string Arme, int Dégats, int avantage, int désavantage) : base(PointsDeVie, Force, Nom, Arme, Dégats)
         {
-            //Avantage
+            this.Avantage = avantage;
+            this.Désavantage = désavantage;
         }
+
+        public int Avantage { get => avantage; set => avantage = value; }
+        public int Désavantage { get => désavantage; set => désavantage = value; }
 
         public override void Coup(Personnage ennemi)
         {
@@ -19,15 +24,15 @@ namespace battlePerso
 
             if (ennemi is Demon)
             {
-                Console.WriteLine(this.Nom + " bénéficie d'un avantage de : " + avantage);
-                dégatsRecus = (Force + Degats + avantage);
+                Console.WriteLine(this.Nom + " bénéficie d'un avantage de : " + Avantage);
+                dégatsRecus = (Force + Degats + Avantage);
                 ennemi.PointDeVie -= dégatsRecus;
                 
             }
             else if (ennemi is Tueur_Dieux)
             {
-                Console.WriteLine(this.Nom + " bénéficie d'une faiblesse de : " + avantage);
-                dégatsRecus = (Force + Degats) - avantage;
+                Console.WriteLine(this.Nom + " bénéficie d'une faiblesse de : " + Désavantage);
+                dégatsRecus = (Force + Degats) - Désavantage;
                 ennemi.PointDeVie -= dégatsRecus;
             }
 
