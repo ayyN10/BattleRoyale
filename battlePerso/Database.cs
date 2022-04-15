@@ -139,7 +139,7 @@ namespace battlePerso.Classes
                 return idUtil;
             }
         }
-
+        /*
         public void InsertStatistique(int idUtilisateur, string Personnage, int DégatsInfligés, bool Victoire)
         {
             string query = "INSERT INTO Statistique (idUtil, Personnage, DegatsInfliges, Victoire) VALUES(\"" + idUtilisateur + "\", \"" + + "\"       )";
@@ -156,6 +156,6 @@ namespace battlePerso.Classes
                 //close connection
                 this.CloseConnection();
             }
-        }
+        }*/
     }
 }
