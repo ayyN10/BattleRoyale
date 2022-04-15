@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace battlePerso
+namespace battlePerso.Classes.Personnages
 {
     class Personnage
     {
@@ -16,13 +16,13 @@ namespace battlePerso
 
         public Personnage(int PointVie, int Force, string Nom, string uneArme, int Dégats)
         {
-            this.nom = Nom;
-            this.force = Force;
-            this.pointVie = PointVie;
-            this.degats = Dégats;
+            nom = Nom;
+            force = Force;
+            pointVie = PointVie;
+            degats = Dégats;
 
-            this.mort = false;
-            this.StatsDegatInflige = 0;
+            mort = false;
+            StatsDegatInflige = 0;
 
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using battlePerso.Classes;
+using battlePerso.Classes.Personnages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -7,12 +9,16 @@ using System.Threading.Tasks;
 namespace battlePerso
 {
     class Program
-    {
-        
+    {     
 
         static void Main(string[] args)
-        {  
-            AfficherMenu();
+        {
+            //AfficherMenu();
+            Database db = new Database();
+            string user = Console.ReadLine();
+            int id = db.VérifUser(user);
+            Console.WriteLine("ID: " + id);
+            Console.ReadLine();
         }
 
         public static void AfficherMenu()

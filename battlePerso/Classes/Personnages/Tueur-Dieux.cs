@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace battlePerso
+namespace battlePerso.Classes.Personnages
 {
     class Tueur_Dieux : Personnage
     {
@@ -11,8 +11,8 @@ namespace battlePerso
 
         public Tueur_Dieux(int PointsDeVie, int Force, string Nom, string Arme, int Dégats, int avantage, int désavantage) : base(PointsDeVie, Force, Nom, Arme, Dégats)
         {
-            this.Avantage = avantage;
-            this.Désavantage = désavantage;
+            Avantage = avantage;
+            Désavantage = désavantage;
         }
 
         public int Avantage { get => avantage; set => avantage = value; }
@@ -23,20 +23,20 @@ namespace battlePerso
             int dégatsRecus = 0;
             if (ennemi is Dieux)
             {
-                Console.WriteLine(this.Nom + " bénéficie d'un avantage de : " + Avantage);
-                dégatsRecus = (Force + Degats + Avantage);
+                Console.WriteLine(Nom + " bénéficie d'un avantage de : " + Avantage);
+                dégatsRecus = Force + Degats + Avantage;
                 ennemi.PointDeVie -= dégatsRecus;
 
             }
             else if (ennemi is Demon)
             {
-                Console.WriteLine(this.Nom + " bénéficie d'une faiblesse de : " + Désavantage);
-                dégatsRecus = (Force + Degats) - Désavantage;
+                Console.WriteLine(Nom + " bénéficie d'une faiblesse de : " + Désavantage);
+                dégatsRecus = Force + Degats - Désavantage;
                 ennemi.PointDeVie -= dégatsRecus;
             }
 
-            Console.WriteLine(this.Nom + " à infligé " + dégatsRecus + " dégats à " + ennemi.Nom + " et il à maintenant " + ennemi.PointDeVie + " points de vie");
-            if(ennemi.PointDeVie <= 0)
+            Console.WriteLine(Nom + " à infligé " + dégatsRecus + " dégats à " + ennemi.Nom + " et il à maintenant " + ennemi.PointDeVie + " points de vie");
+            if (ennemi.PointDeVie <= 0)
             {
                 Console.WriteLine(ennemi.Nom + " est mort !");
                 ennemi.EstMort = true;

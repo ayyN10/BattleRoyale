@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace battlePerso
+namespace battlePerso.Classes.Armes
 {
     class Arme
     {
@@ -11,8 +11,8 @@ namespace battlePerso
 
         public Arme(int Dégats, string Nom)
         {
-            this.degats = Dégats;
-            this.nom = Nom;
+            degats = Dégats;
+            nom = Nom;
         }
 
         public int Degat { get => degats; set => degats = value; }

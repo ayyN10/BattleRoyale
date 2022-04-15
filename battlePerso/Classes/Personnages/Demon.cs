@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace battlePerso
+namespace battlePerso.Classes.Personnages
 {
     class Demon : Personnage
     {
@@ -25,19 +25,19 @@ namespace battlePerso
 
             if (ennemi is Tueur_Dieux)
             {
-                Console.WriteLine(this.Nom + " bénéficie d'un avantage de : " + Avantage);
-                dégatsRecus = (Force + Degats + Avantage);
+                Console.WriteLine(Nom + " bénéficie d'un avantage de : " + Avantage);
+                dégatsRecus = Force + Degats + Avantage;
                 ennemi.PointDeVie -= dégatsRecus;
 
             }
             else if (ennemi is Dieux)
             {
-                Console.WriteLine(this.Nom + " bénéficie d'une faiblesse de : " + Désavantage);
-                dégatsRecus = (Force + Degats) - Désavantage;
+                Console.WriteLine(Nom + " bénéficie d'une faiblesse de : " + Désavantage);
+                dégatsRecus = Force + Degats - Désavantage;
                 ennemi.PointDeVie -= dégatsRecus;
             }
 
-            Console.WriteLine(this.Nom + " à infligé " + dégatsRecus + " dégats à " + ennemi.Nom + " et il à maintenant " + ennemi.PointDeVie + " points de vie");
+            Console.WriteLine(Nom + " à infligé " + dégatsRecus + " dégats à " + ennemi.Nom + " et il à maintenant " + ennemi.PointDeVie + " points de vie");
             if (ennemi.PointDeVie <= 0)
             {
                 Console.WriteLine(ennemi.Nom + " est mort !");

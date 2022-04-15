@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\battlePerso"
+    "\\battlePerso",
+    "\\battlePerso\\Classes"
   ],
-  "SelectedNode": "\\battlePerso.sln",
+  "SelectedNode": "\\battlePerso\\Classes\\Database.cs",
   "PreviewInSolutionExplorer": false
 }
