@@ -13,14 +13,16 @@ namespace battlePerso
 
         static void Main(string[] args)
         {
-            AfficherMenu();
-            /* TESTS Nathan
+            //AfficherMenu();
+            // TESTS Nathan
             Database db = new Database();
-            string user = Console.ReadLine();
-            int id = db.VérifUser(user);
-            Console.WriteLine("ID: " + id);
+            int user = Console.ReadLine();
+            string perso = Console.ReadLine();
+            bool marche = db.InsertStatistique(user, perso, 5000, 1);
+
+            Console.WriteLine(marche.toString());
             Console.ReadLine();
-            */
+            
         }
 
         public static void AfficherMenu()

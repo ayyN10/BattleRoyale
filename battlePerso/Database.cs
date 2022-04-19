@@ -111,7 +111,7 @@ namespace battlePerso.Classes
         {
             string query = "SELECT id FROM Utilisateur WHERE NomUtilisateur = \"" + NomAConnecter + "\";";
 
-            //Create a list to store the result
+            //Create a int to store the result
             int idUtil = 0;
 
             //Open connection
@@ -139,10 +139,9 @@ namespace battlePerso.Classes
                 return idUtil;
             }
         }
-        /*
-        public void InsertStatistique(int idUtilisateur, string Personnage, int DégatsInfligés, bool Victoire)
+        public bool InsertStatistique(int idUtilisateur, string Personnage, int DégatsInfligés, bool Victoire)
         {
-            string query = "INSERT INTO Statistique (idUtil, Personnage, DegatsInfliges, Victoire) VALUES(\"" + idUtilisateur + "\", \"" + + "\"       )";
+            string query = "INSERT INTO Statistique (idUtil, Personnage, DegatsInfliges, Victoire) VALUES(" + idUtilisateur + ", \"" + Personnage + "\", " + DégatsInfligés + ", " + Victoire + ")";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -151,11 +150,20 @@ namespace battlePerso.Classes
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Execute command
-                cmd.ExecuteNonQuery();
+                int ligneAffecté = cmd.ExecuteNonQuery();
 
                 //close connection
                 this.CloseConnection();
+
+                if (ligneAffecté != 1)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }                
             }
-        }*/
+        }
     }
 }
