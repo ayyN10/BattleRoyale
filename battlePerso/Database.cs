@@ -141,29 +141,46 @@ namespace battlePerso.Classes
         }
         public bool InsertStatistique(int idUtilisateur, string Personnage, int DégatsInfligés, bool Victoire)
         {
-            string query = "INSERT INTO Statistique (idUtil, Personnage, DegatsInfliges, Victoire) VALUES(" + idUtilisateur + ", \"" + Personnage + "\", " + DégatsInfligés + ", " + Victoire + ")";
-
-            //open connection
-            if (this.OpenConnection() == true)
+            try
             {
-                //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                int VictoireBD;
 
-                //Execute command
-                int ligneAffecté = cmd.ExecuteNonQuery();
-
-                //close connection
-                this.CloseConnection();
-
-                if (ligneAffecté != 1)
-                {
-                    return false;
-                }
+                if (Victoire) // EN MYSQL, BOOLEAN EST REMPLACÉ PAR TINYINT 0 = false, 1 = true
+                    VictoireBD = 1;
                 else
+                    VictoireBD = 0;
+
+                string query = "INSERT INTO Statistique (idUtil, Personnage, DegatsInfliges, Victoire) VALUES(" + idUtilisateur + ", \"" + Personnage + "\", " + DégatsInfligés + ", " + VictoireBD + ")";
+
+                //open connection
+                if (this.OpenConnection() == true)
                 {
-                    return true;
-                }                
+                    //create command and assign the query and connection from the constructor
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    //Execute command
+                    int ligneAffecté = cmd.ExecuteNonQuery();
+
+                    //close connection
+                    this.CloseConnection();
+
+                    if (ligneAffecté != 1)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                return false;
             }
+            catch(MySqlException exc)
+            {
+                Console.WriteLine("Impossible : " + exc);
+                return false;
+            }
+            
         }
     }
 }
