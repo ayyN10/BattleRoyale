@@ -14,7 +14,6 @@ namespace battlePerso
         static void Main(string[] args)
         {
             AfficherConnexion();
-           
 
             /*
             // TESTS Nathan
@@ -275,13 +274,25 @@ namespace battlePerso
                 Console.ReadLine();
 
             }
+            Database db = new Database();
             if (lesPersonnagesVivant[0] == personnageChoisi1v1)
             {
                 Console.WriteLine("Bravo ! Vous avez gagnez !");
+                if(!db.InsertStatistique(Utilisateur.IdUtilisateur, personnageChoisi1v1.Nom, personnageChoisi1v1.StatsDegatInflige, true))
+                {
+                    Console.WriteLine("Une erreur à eut lieu pour enregistrer ce combat dans la base de donnée");
+                }
+                
             }
             else
             {
                 Console.WriteLine("Dommage ! Vous avez perdu...");
+                if (!db.InsertStatistique(Utilisateur.IdUtilisateur, personnageChoisi1v1.Nom, personnageChoisi1v1.StatsDegatInflige, false))
+                {
+                    
+                }
+
+
             }
             Console.WriteLine("le vainqueur est " + lesPersonnagesVivant[0].Nom);
             Console.ReadLine();
@@ -342,13 +353,22 @@ namespace battlePerso
                 Console.ReadLine();
 
             }
+            Database db = new Database();
             if (lesPersonnages[0] == personnageChoisi)
             {
                 Console.WriteLine("Bravo ! Vous avez gagnez !");
+                if (!db.InsertStatistique(Utilisateur.IdUtilisateur, personnageChoisi.Nom, personnageChoisi.StatsDegatInflige, true))
+                {
+                    Console.WriteLine("Une erreur à eut lieu pour enregistrer ce combat dans la base de donnée");
+                }
             }
             else
             {
                 Console.WriteLine("Dommage ! Vous avez perdu...");
+                if (!db.InsertStatistique(Utilisateur.IdUtilisateur, personnageChoisi.Nom, personnageChoisi.StatsDegatInflige, false))
+                {
+                    Console.WriteLine("Une erreur à eut lieu pour enregistrer ce combat dans la base de donnée");
+                }
             }
             Console.WriteLine("le vainqueur est " + lesPersonnages[0].Nom);
             Console.ReadLine();

@@ -7,6 +7,12 @@ namespace battlePerso.Classes
 {
     class Database
     {
+
+        /*
+        AIDE : Utilisez ce site pour vous aider à créer vos requêtes le jour J.
+        https://www.codeproject.com/Articles/43438/Connect-C-to-MySQL
+        */
+
         private MySqlConnection connection;
         private string server;
         private string database;
