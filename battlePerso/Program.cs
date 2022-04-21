@@ -37,7 +37,8 @@ namespace battlePerso
                 int idUtil = db.VérifUser(Console.ReadLine());
                 if (idUtil != -1)
                 {
-                    Console.WriteLine("Vous etes maintenant connecté");
+                    Console.Clear();
+                    Console.WriteLine("Vous etes maintenant connecté\n");
                     Utilisateur.IdUtilisateur = idUtil;
                     bonChoix = true;
                     AfficherMenu();                
@@ -50,6 +51,39 @@ namespace battlePerso
             bool bonChoix = false;
             while (bonChoix == false)
             {
+                
+                Console.WriteLine("Que souhaitez-vous faire ?");
+                Console.WriteLine("1 - Jouer une partie");
+                Console.WriteLine("2 - Voir vos statistiques");
+                Console.WriteLine("3 - Quitter l'application");
+
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        bonChoix = true;
+                        Console.Clear();
+                        ChoixModeDeJeu();
+                        break;
+                    case "2":
+                        bonChoix = true;
+                        Console.Clear();
+                        AfficherStatistiques();
+                        break;
+                    case "3":
+                        bonChoix = true;
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Choix incorrect\n");
+                        break;
+                }
+            }
+        }
+        public static void ChoixModeDeJeu()
+        {
+            bool bonChoix = false;
+            while (bonChoix == false)
+            {
                 Console.WriteLine("Choisissez votre mode de jeux");
                 Console.WriteLine("Tapez 1 si vous voulez jouer au Battle Royale");
                 Console.WriteLine("Tapez 2 si vous voulez jouer au 1 vs 1");
@@ -58,10 +92,12 @@ namespace battlePerso
                 {
                     case "1":
                         bonChoix = true;
+                        Console.Clear();
                         LancerBattleRoyal();
                         break;
                     case "2":
                         bonChoix = true;
+                        Console.Clear();
                         Lancer1V1();
                         break;
                     default:
@@ -71,7 +107,6 @@ namespace battlePerso
                 }
             }
         }
-
 
         public static void AfficherPersonnages(List<Personnage> lesPersonnages)
         {
@@ -94,9 +129,47 @@ namespace battlePerso
             }
         }
 
+        public static void AfficherStatistiques()
+        {
+            bool bonChoix = false;
+            Database db = new Database();
+            while (bonChoix == false)
+            {
+                Console.WriteLine("Quel statistique souhaitez-vous voir ?");
+                Console.WriteLine("1 - Voir votre nombre de victoire");
+                Console.WriteLine("2 - Voir vos dégats infligé ");
+                Console.WriteLine("3 - Retourner au menu principal");
 
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        Console.Clear();
+                        int nbVictoires = db.GetNbVictoires(Utilisateur.IdUtilisateur);
+                        Console.WriteLine("Vous avez comptabilisé " + nbVictoires + " victoires.\n");
+                        break;
+
+                    case "2":
+                        Console.Clear();
+                        int totalDégatsInfligés = db.GetTotalDégatsInfligés(Utilisateur.IdUtilisateur);
+                        Console.WriteLine("Vous avez comptabilisé un total de " + totalDégatsInfligés + " dégats sur l'ensemble vos parties.\n");
+                        break;
+
+                    case "3":
+                        bonChoix = true;
+                        Console.Clear();
+                        AfficherMenu();
+                        break;
+
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Choix incorrect\n");
+                        break;
+                }
+            }
+        }
         private static void Lancer1V1()
         {
+            Console.WriteLine("Vous lancez une partie de 1 vs 1 :\n");
             List<Personnage> lesPersonnages = new List<Personnage>();
             List<Personnage> lesPersonnagesVivant = new List<Personnage>();
             List<Personnage> lesPersonnagesMort = new List<Personnage>();
@@ -116,19 +189,19 @@ namespace battlePerso
                 switch (Console.ReadLine())
                 {
                     case "Odin":
-                        Console.WriteLine("Vous avez choisi Odin");
+                        Console.WriteLine("\nVous avez choisi Odin\n");
                         personnageChoisi1v1 = Odin;
                         lesPersonnagesVivant.Add(personnageChoisi1v1);
                         bonChoix = true;
                         break;
                     case "Zeus":
-                        Console.WriteLine("Vous avez choisi Zeus");
+                        Console.WriteLine("\nVous avez choisi Zeus\n");
                         personnageChoisi1v1 = Zeus;
                         lesPersonnagesVivant.Add(personnageChoisi1v1);
                         bonChoix = true;
                         break;
                     case "Hades":
-                        Console.WriteLine("Vous avez choisi Hades");
+                        Console.WriteLine("\nVous avez choisi Hades\n");
                         personnageChoisi1v1 = Hades;
                         lesPersonnagesVivant.Add(personnageChoisi1v1);
                         bonChoix = true;
@@ -159,7 +232,7 @@ namespace battlePerso
                             Console.WriteLine("Vous pouvez pas choisir vous même en tant que adversaire ! ");
                             Lancer1V1();
                         }
-                        Console.WriteLine("Vous avez choisi Odin comme adversaire");
+                        Console.WriteLine("\nVous avez choisi Odin comme adversaire\n");
                         personnageChoisi1v1Adversaire = Odin;
                         lesPersonnagesVivant.Add(personnageChoisi1v1Adversaire);
                         bonChoix = true;
@@ -170,7 +243,7 @@ namespace battlePerso
                             Console.WriteLine("Vous pouvez pas choisir vous même en tant que adversaire ! ");
                             Lancer1V1();
                         }
-                        Console.WriteLine("Vous avez choisi Zeus comme adversaire");
+                        Console.WriteLine("\nVous avez choisi Zeus comme adversaire\n");
                         personnageChoisi1v1Adversaire = Zeus;
                         lesPersonnagesVivant.Add(personnageChoisi1v1Adversaire);
                         bonChoix = true;
@@ -181,7 +254,7 @@ namespace battlePerso
                             Console.WriteLine("Vous pouvez pas choisir vous même en tant que adversaire ! ");
                             Lancer1V1();
                         }
-                        Console.WriteLine("Vous avez choisi Hades comme adversaire");
+                        Console.WriteLine("\nVous avez choisi Hades comme adversaire\n");
                         personnageChoisi1v1Adversaire = Hades;
                         lesPersonnagesVivant.Add(personnageChoisi1v1Adversaire);
                         bonChoix = true;
@@ -212,10 +285,14 @@ namespace battlePerso
             }
             Console.WriteLine("le vainqueur est " + lesPersonnagesVivant[0].Nom);
             Console.ReadLine();
+
+            Console.Clear();
+            AfficherMenu();
         }
 
         public static void LancerBattleRoyal()
         {
+            Console.WriteLine("Vous lancez une partie de Battle Royal :\n");
             List<Personnage> lesPersonnages = new List<Personnage>();
             List<Personnage> lesPersonnagesMort = new List<Personnage>();
 
@@ -235,17 +312,17 @@ namespace battlePerso
                 switch (Console.ReadLine())
                 {
                     case "Odin":
-                        Console.WriteLine("Vous avez choisi Odin");
+                        Console.WriteLine("\nVous avez choisi Odin\n");
                         personnageChoisi = Odin;
                         bonChoix = true;
                         break;
                     case "Zeus":
-                        Console.WriteLine("Vous avez choisi Zeus");
+                        Console.WriteLine("\nVous avez choisi Zeus\n");
                         personnageChoisi = Zeus;
                         bonChoix = true;
                         break;
                     case "Hades":
-                        Console.WriteLine("Vous avez choisi Hades");
+                        Console.WriteLine("\nVous avez choisi Hades\n");
                         personnageChoisi = Hades;
                         bonChoix = true;
                         break;
@@ -275,6 +352,9 @@ namespace battlePerso
             }
             Console.WriteLine("le vainqueur est " + lesPersonnages[0].Nom);
             Console.ReadLine();
+
+            Console.Clear();
+            AfficherMenu();
         }
 
         public static void LancerCombat1v1(List<Personnage> personnageVivant, Personnage personnageChoisi1v1, Personnage personnageChoisi1v1Adversaire)

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SURFACE\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {}
+    "C:\\Users\\SURFACE\\source\\repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SURFACE\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {
+    "C:\\Users\\SURFACE\\source\\repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SURFACE\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
+        "projectUniqueName": "C:\\Users\\SURFACE\\source\\repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
         "projectName": "battlePerso",
-        "projectPath": "C:\\Users\\SURFACE\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
+        "projectPath": "C:\\Users\\SURFACE\\source\\repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
         "packagesPath": "C:\\Users\\SURFACE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SURFACE\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\obj\\",
+        "outputPath": "C:\\Users\\SURFACE\\source\\repos\\ayyN10\\BattleRoyale\\battlePerso\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SURFACE\\AppData\\Roaming\\NuGet\\NuGet.Config",

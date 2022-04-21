@@ -139,6 +139,7 @@ namespace battlePerso.Classes
                 return idUtil;
             }
         }
+
         public bool InsertStatistique(int idUtilisateur, string Personnage, int DégatsInfligés, bool Victoire)
         {
             try
@@ -213,6 +214,39 @@ namespace battlePerso.Classes
             else
             {
                 return nbVictoires;
+            }
+        }
+
+        public int GetTotalDégatsInfligés(int idUtil)
+        {
+            string query = "SELECT SUM(DegatsInfliges) FROM Statistique WHERE idUtil = " + idUtil + ";";
+
+            //Create a int to store the result
+            int totalDégatsInfligés = 0;
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                if (cmd.ExecuteScalar() is null)
+                {
+                    totalDégatsInfligés = -1;
+                }
+                else
+                {
+                    totalDégatsInfligés = int.Parse(cmd.ExecuteScalar() + "");
+                }
+
+                //close Connection
+                this.CloseConnection();
+
+                return totalDégatsInfligés;
+            }
+            else
+            {
+                return totalDégatsInfligés;
             }
         }
 
