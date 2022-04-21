@@ -216,3 +216,5 @@ C:\Users\paluat\Source\Repos\ayyN10\BattleRoyale\battlePerso\bin\Debug\netcoreap
 C:\Users\paluat\Source\Repos\ayyN10\BattleRoyale\battlePerso\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\paluat\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.csproj.CopyComplete
 C:\Users\paluat\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.genruntimeconfig.cache
+C:\Users\SURFACE\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.Properties.Resources.resources
+C:\Users\SURFACE\Source\Repos\ayyN10\BattleRoyale\battlePerso\obj\Debug\netcoreapp3.1\battlePerso.csproj.GenerateResource.cache

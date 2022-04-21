@@ -9,7 +9,7 @@ namespace battlePerso.Classes.Personnages
         private int avantage;
         private int désavantage;
 
-        public Demon(int PointsDeVie, int Force, string Nom, string Arme, int Dégats, int Avantage, int Désavantage) : base(PointsDeVie, Force, Nom, Arme, Dégats)
+        public Demon(int PointsDeVie, int Force, string Nom, int Dégats, int Avantage, int Désavantage) : base(PointsDeVie, Force, Nom, Dégats)
         {
             this.Avantage = Avantage;
             this.Désavantage = Désavantage;

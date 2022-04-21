@@ -9,10 +9,10 @@ namespace battlePerso.Classes.Personnages
         private int avantage;
         private int désavantage;
 
-        public Tueur_Dieux(int PointsDeVie, int Force, string Nom, string Arme, int Dégats, int avantage, int désavantage) : base(PointsDeVie, Force, Nom, Arme, Dégats)
+        public Tueur_Dieux(int PointsDeVie, int Force, string Nom, int Dégats, int avantage, int désavantage) : base(PointsDeVie, Force, Nom, Dégats)
         {
-            Avantage = avantage;
-            Désavantage = désavantage;
+            this.Avantage = avantage;
+            this.Désavantage = désavantage;
         }
 
         public int Avantage { get => avantage; set => avantage = value; }

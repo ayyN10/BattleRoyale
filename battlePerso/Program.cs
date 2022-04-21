@@ -38,6 +38,7 @@ namespace battlePerso
                 if (idUtil != -1)
                 {
                     Console.WriteLine("Vous etes maintenant connecté");
+                    Utilisateur.IdUtilisateur = idUtil;
                     bonChoix = true;
                     AfficherMenu();                
                 }
@@ -100,9 +101,9 @@ namespace battlePerso
             List<Personnage> lesPersonnagesVivant = new List<Personnage>();
             List<Personnage> lesPersonnagesMort = new List<Personnage>();
 
-            Dieux Odin = new Dieux(100, 50, "Odin", "Lance de vériter", 1, 50, 50);
-            Tueur_Dieux Zeus = new Tueur_Dieux(200, 52, "Zeus", "Lance de vériter", 3, 50, 50);
-            Demon Hades = new Demon(100, 10, "Hades", "Flamme de l'enfer", 1, 50, 50);
+            Dieux Odin = new Dieux(100, 50, "Odin", 1, 50, 50);
+            Tueur_Dieux Zeus = new Tueur_Dieux(200, 52, "Zeus", 3, 50, 50);
+            Demon Hades = new Demon(100, 10, "Hades", 1, 50, 50);
             lesPersonnages.Add(Odin);
             lesPersonnages.Add(Zeus);
             lesPersonnages.Add(Hades);
@@ -196,7 +197,7 @@ namespace battlePerso
 
             while (lesPersonnagesVivant.Count > 1)
             {
-                LancerCombat1v1(lesPersonnagesVivant);
+                LancerCombat1v1(lesPersonnagesVivant, personnageChoisi1v1, personnageChoisi1v1Adversaire);
                 ListerPersonnagesMorts(lesPersonnagesVivant, lesPersonnagesMort); //Recompte les personnages morts
                 Console.ReadLine();
 
@@ -218,9 +219,9 @@ namespace battlePerso
             List<Personnage> lesPersonnages = new List<Personnage>();
             List<Personnage> lesPersonnagesMort = new List<Personnage>();
 
-            Dieux Odin = new Dieux(100, 50, "Odin", "Lance de vériter", 1, 50, 50);
-            Tueur_Dieux Zeus = new Tueur_Dieux(200, 52, "Zeus", "Lance de vériter", 3, 50, 50);
-            Demon Hades = new Demon(100, 10, "Hades", "Flamme de l'enfer", 1, 50, 50);
+            Dieux Odin = new Dieux(100, 50, "Odin", 1, 50, 50);
+            Tueur_Dieux Zeus = new Tueur_Dieux(200, 52, "Zeus", 3, 50, 50);
+            Demon Hades = new Demon(100, 10, "Hades", 1, 50, 50);
             lesPersonnages.Add(Odin);
             lesPersonnages.Add(Zeus);
             lesPersonnages.Add(Hades);
@@ -276,21 +277,48 @@ namespace battlePerso
             Console.ReadLine();
         }
 
-        public static void LancerCombat1v1(List<Personnage> lesPersonnages)
+        public static void LancerCombat1v1(List<Personnage> personnageVivant, Personnage personnageChoisi1v1, Personnage personnageChoisi1v1Adversaire)
         {
-            Random rdn_Personnage = new Random();
-            int choixPersonnage = rdn_Personnage.Next(0, lesPersonnages.Count); //Choix d'un personnage
-            Random rdn_Adversaire = new Random();
-            int choixAdversaire = rdn_Adversaire.Next(0, lesPersonnages.Count); //Choix de son adversaire
+            Console.WriteLine("Quels action souhaitez vous effectuer ?");
+            Console.WriteLine("Attaquer = 1");
+            Console.WriteLine("Soigner = 2");
 
-            while (choixPersonnage == choixAdversaire)
+            bool bonChoix = false;
+            while (bonChoix == false)
             {
-                choixAdversaire = rdn_Adversaire.Next(0, lesPersonnages.Count);
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        Console.WriteLine("Vous avez choisi d'attaquer");
+                        personnageChoisi1v1.attaquer(personnageChoisi1v1Adversaire);
+                        bonChoix = true;
+                        break;
+                    case "2":
+                        Console.WriteLine("Vous avez choisi de vous soigner");
+                        personnageChoisi1v1.seSoigner();
+                        bonChoix = true;
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Choix incorrect\n");
+                        Console.WriteLine("Choisissez uune bonne action !\n");
+                        Console.WriteLine("Quels action souhaitez vous effectuer ?");
+                        Console.WriteLine("Attaquer = 1");
+                        Console.WriteLine("Soigner = 2");
+                        break;
+                }
             }
 
-            Console.WriteLine(lesPersonnages[choixPersonnage].Nom + " combat contre " + lesPersonnages[choixAdversaire].Nom);
-
-            lesPersonnages[choixPersonnage].Coup(lesPersonnages[choixAdversaire]);
+            Random rand = new Random();
+            int choix = rand.Next(100);
+            if (choix <= 75)
+            {
+                personnageChoisi1v1Adversaire.attaquer(personnageChoisi1v1);
+            }
+            else
+            {
+                personnageChoisi1v1Adversaire.seSoigner();
+            }
         }
 
         public static void LancerCombatBattleRoyal(List<Personnage> lesPersonnages)
