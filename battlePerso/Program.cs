@@ -37,7 +37,7 @@ namespace battlePerso
                 int idUtil = db.VérifUser(Console.ReadLine());
                 if (idUtil != -1)
                 {
-                    Console.WriteLine("Vous etes a présent connecté");
+                    Console.WriteLine("Vous etes maintenant connecté");
                     bonChoix = true;
                     AfficherMenu();                
                 }

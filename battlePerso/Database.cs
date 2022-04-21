@@ -182,5 +182,39 @@ namespace battlePerso.Classes
             }
             
         }
+
+        public int GetNbVictoires(int idUtil)
+        {
+            string query = "SELECT nbVictoire FROM Utilisateur WHERE id = " + idUtil + ";";
+
+            //Create a int to store the result
+            int nbVictoires = 0;
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                if (cmd.ExecuteScalar() is null)
+                {
+                    nbVictoires = -1;
+                }
+                else
+                {
+                    nbVictoires = int.Parse(cmd.ExecuteScalar() + "");
+                }
+
+                //close Connection
+                this.CloseConnection();
+
+                return nbVictoires;
+            }
+            else
+            {
+                return nbVictoires;
+            }
+        }
+
     }
 }
