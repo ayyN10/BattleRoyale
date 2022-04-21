@@ -13,7 +13,8 @@ namespace battlePerso
 
         static void Main(string[] args)
         {
-            AfficherMenu();
+            AfficherConnexion();
+           
 
             /*
             // TESTS Nathan
@@ -26,6 +27,21 @@ namespace battlePerso
             Console.ReadLine();
             */
             
+        }
+        public static void AfficherConnexion(){
+            bool bonChoix = false;
+            Database db = new Database();
+            while (bonChoix == false)
+            {
+                Console.WriteLine("vous devez vous connecter, entrez votre identifiant :");
+                int idUtil = db.VérifUser(Console.ReadLine());
+                if (idUtil != -1)
+                {
+                    Console.WriteLine("Vous etes a présent connecté");
+                    bonChoix = true;
+                    AfficherMenu();                
+                }
+            } 
         }
 
         public static void AfficherMenu()

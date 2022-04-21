@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OGER\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {}
+    "C:\\Users\\paluat\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OGER\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {
+    "C:\\Users\\paluat\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OGER\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
+        "projectUniqueName": "C:\\Users\\paluat\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
         "projectName": "battlePerso",
-        "projectPath": "C:\\Users\\OGER\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
-        "packagesPath": "C:\\Users\\OGER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OGER\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\obj\\",
+        "projectPath": "C:\\Users\\paluat\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
+        "packagesPath": "C:\\Users\\paluat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paluat\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\OGER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paluat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -66,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

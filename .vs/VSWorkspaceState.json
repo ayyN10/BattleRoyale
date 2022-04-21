@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\battlePerso"
   ],
-  "SelectedNode": "\\battlePerso.sln",
+  "SelectedNode": "\\battlePerso\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
