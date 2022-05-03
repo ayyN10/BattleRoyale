@@ -80,6 +80,7 @@ namespace battlePerso
 
             Random rand = new Random();
             float degatsInfliges = rand.Next(15, 35) * modificateurDegats;
+            StatsDegatInflige += (int)Math.Round(degatsInfliges);
 
             persoAAttaquer.pointVie -= degatsInfliges;
             Console.WriteLine(this.nom + " a infligé " + degatsInfliges + " points de dégats a " + persoAAttaquer.nom);
@@ -90,7 +91,6 @@ namespace battlePerso
                 Console.WriteLine(persoAAttaquer.Nom + " est mort !");
                 persoAAttaquer.EstMort = true;
             }
-
         }
 
         //Le personnage actif se soigne d'une certaine quantité de points de vie
@@ -107,6 +107,12 @@ namespace battlePerso
                 this.PointDeVie += rand.Next(20, 35);
             }
             Console.WriteLine(this.nom + " s'est soigné de " + (this.PointDeVie - pdvAvant) + ", il a désormais " + this.PointDeVie + " points de vie.");
+        }
+
+        //Remise a zéro du nombre de dégats infligés apres un combat
+        public void resetDegats()
+        {
+            StatsDegatInflige = 0;
         }
 
         public virtual void Coup(Personnage ennemi)

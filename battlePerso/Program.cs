@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace battlePerso
 {
     class Program
-    {     
+    {
 
         static void Main(string[] args)
         {
@@ -25,9 +25,10 @@ namespace battlePerso
             Console.WriteLine(marche.ToString());
             Console.ReadLine();
             */
-            
+
         }
-        public static void AfficherConnexion(){
+        public static void AfficherConnexion()
+        {
             bool bonChoix = false;
             Database db = new Database();
             while (bonChoix == false)
@@ -40,9 +41,9 @@ namespace battlePerso
                     Console.WriteLine("Vous etes maintenant connecté\n");
                     Utilisateur.IdUtilisateur = idUtil;
                     bonChoix = true;
-                    AfficherMenu();                
+                    AfficherMenu();
                 }
-            } 
+            }
         }
 
         public static void AfficherMenu()
@@ -50,7 +51,7 @@ namespace battlePerso
             bool bonChoix = false;
             while (bonChoix == false)
             {
-                
+
                 Console.WriteLine("Que souhaitez-vous faire ?");
                 Console.WriteLine("1 - Jouer une partie");
                 Console.WriteLine("2 - Voir vos statistiques");
@@ -278,22 +279,23 @@ namespace battlePerso
             if (lesPersonnagesVivant[0] == personnageChoisi1v1)
             {
                 Console.WriteLine("Bravo ! Vous avez gagnez !");
-                if(!db.InsertStatistique(Utilisateur.IdUtilisateur, personnageChoisi1v1.Nom, personnageChoisi1v1.StatsDegatInflige, true))
+                if (!db.InsertStatistique(Utilisateur.IdUtilisateur, personnageChoisi1v1.Nom, personnageChoisi1v1.StatsDegatInflige, true))
                 {
                     Console.WriteLine("Une erreur à eut lieu pour enregistrer ce combat dans la base de donnée");
                 }
-                
+
             }
             else
             {
                 Console.WriteLine("Dommage ! Vous avez perdu...");
                 if (!db.InsertStatistique(Utilisateur.IdUtilisateur, personnageChoisi1v1.Nom, personnageChoisi1v1.StatsDegatInflige, false))
                 {
-                    
+
                 }
 
 
             }
+            personnageChoisi1v1.resetDegats();
             Console.WriteLine("le vainqueur est " + lesPersonnagesVivant[0].Nom);
             Console.ReadLine();
 
@@ -348,6 +350,7 @@ namespace battlePerso
 
             while (lesPersonnages.Count > 1)
             {
+                Console.Clear();
                 LancerCombatBattleRoyal(lesPersonnages);
                 ListerPersonnagesMorts(lesPersonnages, lesPersonnagesMort); //Recompte les personnages morts
                 Console.ReadLine();
@@ -370,6 +373,7 @@ namespace battlePerso
                     Console.WriteLine("Une erreur à eut lieu pour enregistrer ce combat dans la base de donnée");
                 }
             }
+            personnageChoisi.resetDegats();
             Console.WriteLine("le vainqueur est " + lesPersonnages[0].Nom);
             Console.ReadLine();
 
@@ -379,6 +383,7 @@ namespace battlePerso
 
         public static void LancerCombat1v1(List<Personnage> personnageVivant, Personnage personnageChoisi1v1, Personnage personnageChoisi1v1Adversaire)
         {
+            Console.Clear();
             Console.WriteLine("Quels action souhaitez vous effectuer ?");
             Console.WriteLine("Attaquer = 1");
             Console.WriteLine("Soigner = 2");
@@ -407,6 +412,7 @@ namespace battlePerso
                         Console.WriteLine("Soigner = 2");
                         break;
                 }
+
             }
 
             Random rand = new Random();
@@ -419,13 +425,14 @@ namespace battlePerso
             {
                 personnageChoisi1v1Adversaire.seSoigner();
             }
+
         }
 
         public static void LancerCombatBattleRoyal(List<Personnage> lesPersonnages)
         {
-            Random rdn_Personnage = new Random() ; 
+            Random rdn_Personnage = new Random();
             int choixPersonnage = rdn_Personnage.Next(0, lesPersonnages.Count); //Choix d'un personnage
-            Random rdn_Adversaire = new Random(); 
+            Random rdn_Adversaire = new Random();
             int choixAdversaire = rdn_Adversaire.Next(0, lesPersonnages.Count); //Choix de son adversaire
 
             while (choixPersonnage == choixAdversaire)
@@ -435,7 +442,7 @@ namespace battlePerso
 
             Console.WriteLine(lesPersonnages[choixPersonnage].Nom + " combat contre " + lesPersonnages[choixAdversaire].Nom);
 
-            lesPersonnages[choixPersonnage].Coup(lesPersonnages[choixAdversaire]);
+            lesPersonnages[choixPersonnage].attaquer(lesPersonnages[choixAdversaire]);
         }
 
     }
