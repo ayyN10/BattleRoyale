@@ -4,7 +4,7 @@ using System.Text;
 
 namespace battlePerso
 {
-    class Personnage
+    public class Personnage
     {
         private float pointVie;
         private int force;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace battlePerso.Classes.Personnages
 {
-    class Demon : Personnage
+    public class Demon : Personnage
     {
         private int avantage;
         private int désavantage;
@@ -34,6 +34,11 @@ namespace battlePerso.Classes.Personnages
             {
                 Console.WriteLine(Nom + " bénéficie d'une faiblesse de : " + Désavantage);
                 dégatsRecus = Force + Degats - Désavantage;
+                if (dégatsRecus < 0)
+                {
+                    dégatsRecus = 0;
+                }
+
                 ennemi.PointDeVie -= dégatsRecus;
             }
 

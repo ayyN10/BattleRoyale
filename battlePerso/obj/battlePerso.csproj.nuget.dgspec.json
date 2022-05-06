@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nathi\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {}
+    "C:\\Users\\schul\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nathi\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {
+    "C:\\Users\\schul\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nathi\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
+        "projectUniqueName": "C:\\Users\\schul\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
         "projectName": "battlePerso",
-        "projectPath": "C:\\Users\\nathi\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
-        "packagesPath": "C:\\Users\\nathi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nathi\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\obj\\",
+        "projectPath": "C:\\Users\\schul\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\battlePerso.csproj",
+        "packagesPath": "C:\\Users\\schul\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\schul\\Source\\Repos\\ayyN10\\BattleRoyale\\battlePerso\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\schul\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
